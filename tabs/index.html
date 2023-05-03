@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Tabs Horizontal</h2>
+        <div class="tabs">
+            <button class="tab-links" onclick="openTab(this, 'London','red','white')">Tab 1</button>
+            <button class="tab-links" onclick="openTab(this, 'Paris','green','white')">Tab 2</button>
+            <button class="tab-links" onclick="openTab(this, 'Tokyo','blue','white')">Tab 3</button>
+        </div>
+
+        <div id="London" class="tab-content">
+            <h3 >London</h3>
+            <p>London is the capital of England</p>
+        </div>
+
+        <div id="Paris" class="tab-content">
+            <h3 >Paris</h3>
+            <p>Paris is the capital of France</p>
+        </div>
+
+        <div id="Tokyo" class="tab-content">
+            <h3 >Tokyo</h3>
+            <p>Tokyo is the capital of Japan</p>
+        </div>
+    </div>
+
+
+    <script>
+        // function openTab(e, cityName) {
+        //     // hide all tab content
+        //     tabContents = document.getElementsByClassName('tab-content');
+        //    for(let cont of tabContents){
+        //     cont.classList.remove('active')
+        //    }
+                
+        //    // Make tab active
+        //    document.getElementById(cityName).classList.add('active')
+
+        //    // remove all active button background
+        //     let tabLinks = document.getElementsByClassName('tab-links')
+        //     for(let tab of tabLinks){
+        //         tab.classList.remove('active')
+        //     }
+
+        //     // Clicked button active
+        //     e.classList.add('active')
+        // }
+
+        function openTab(e,cityName,bg,color) {
+            let tabContent = document.getElementsByClassName('tab-content');
+            for(let tab of tabContent) {
+                tab.style.display = 'none'
+            }
+            
+            let tablinks = document.getElementsByClassName('tab-links');
+            for(let link of tablinks) {
+                link.style.backgroundColor = '';
+                link.style.color = '';
+            }
+
+            document.getElementById(cityName).style.display = 'block';
+            e.style.backgroundColor = bg;
+            e.style.color = color
+        }
+    </script>
+</body>
+</html>

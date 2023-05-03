@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkMode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Toggle Dark/Light Mode</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis placeat sit, quae aspernatur debitis nesciunt ratione repellat tempore unde repellendus adipisci nam aliquid autem aut officiis incidunt neque quos necessitatibus!</p>
+    <button onclick="darkMode()">Click Me</button>
+
+    
+    <script>
+        function darkMode(){
+            var changeColor = document.body;
+            changeColor.classList.toggle('dark-mode')
+        }
+    </script>
+</body>
+</html>

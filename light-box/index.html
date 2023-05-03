@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light box image gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="image_gallery">
+        <img onclick="openModal(this)" src="https://www.w3schools.com/howto/img_nature.jpg" alt="img1">
+        <img onclick="openModal(this)" src="https://www.w3schools.com/howto/img_snow.jpg" alt="img2">
+        <img onclick="openModal(this)" src="https://www.w3schools.com/howto/img_mountains.jpg" alt="img3">
+    </div>
+
+    <div class="modal-wrap">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="imageBox" src="https://www.w3schools.com/howto/img_nature.jpg" alt="">
+        <p class="caption"></p>
+
+        <a href="#" class="prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="m4 10l9 9l1.4-1.5L7 10l7.4-7.5L13 1z"/></svg>
+        </a>
+        <a href="#" class="next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M7 1L5.6 2.5L13 10l-7.4 7.5L7 19l9-9z"/></svg>
+        </a>
+
+        <div class="adition-image">
+            <img class="demo" onclick="openModal(this)" src="https://www.w3schools.com/howto/img_nature.jpg" alt="Nature">
+            <img class="demo" onclick="openModal(this)" src="https://www.w3schools.com/howto/img_snow.jpg" alt="snow">
+            <img class="demo" onclick="openModal(this)" src="https://www.w3schools.com/howto/img_mountains.jpg" alt="Mountains">           
+        </div>
+    </div>
+
+    <script>
+        function openModal(smallImg) {
+            document.querySelector('.modal-wrap').style.display = 'block';
+            var changeImg = document.querySelector('#imageBox');
+            changeImg.src = smallImg.src   
+        }
+
+        function closeModal() {
+            document.querySelector('.modal-wrap').style.display = 'none'
+        }
+    </script>
+</body>
+
+</html>

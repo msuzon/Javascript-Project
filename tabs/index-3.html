@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search Bar Example</title>
+	<style>
+		.search-form {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 20px;
+		}
+
+		.search-form input[type="text"] {
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			margin-right: 5px;
+			flex-grow: 1;
+		}
+
+		.search-form input[type="submit"] {
+			padding: 10px;
+			background-color: #333;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="search-form">
+		<form>
+			<input type="text" id="search-input" placeholder="Search...">
+			<input type="submit" value="Go">
+		</form>
+	</div>
+	<script>
+		const form = document.querySelector('form');
+		const input = document.querySelector('#search-input');
+
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+			const query = input.value;
+			// Perform search operation using the query
+			document.write(query)
+		});
+	</script>
+</body>
+</html>

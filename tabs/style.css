@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.tabs {
+    margin-top: 20px;
+    background-color: #ddd;
+}
+
+.tab-content {
+    display: none;
+    padding: 24px 8px;
+    border: 1px solid #ddd;
+    transition: .4s ease;
+}
+
+.tab-links {
+    padding: 12px;
+    cursor: pointer;
+    border: none;
+    background-color: #ddd;
+    transition: 0.3s;
+    
+}
+
+.tab-links:hover {
+    background-color: #ccc;
+}
+.tab-links.active {
+    background-color: #ccc !important;
+    color: #fff;
+}
+
+.tab-content.active {
+    display: block !important;
+}
+
+#London {
+    background-color: red;
+    color: #fff;
+}
+
+#Paris {
+    background-color: green;
+    color: #fff;
+}
+
+#Tokyo {
+    background-color: blue;
+    color: #fff;
+}

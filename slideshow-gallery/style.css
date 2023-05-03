@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    position: relative;
+}
+.mySlides img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+.numbertext {
+    position: absolute;
+    top: 5px;
+    color: #f2f2f2;
+    font-size: 20px;
+}
+.Thumbnail-image {
+    display: flex;
+}
+
+.Thumbnail-image img {
+    cursor: pointer;
+}
+
+.prev {
+    position: absolute;
+    left: 0;
+    top: 150px;
+    color: white;
+    padding: 8px;
+    border-radius: 0 5px 5px 0;
+    transition: 0.5s;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: black;
+  }
+  .next {
+    position: absolute;
+    right: 0;
+    top: 150px;
+    color: white;
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+    transition: 0.5s;
+  }
+
+  .caption-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    color: white;
+    height: 50px;
+  }
+
+
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }

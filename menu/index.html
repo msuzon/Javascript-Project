@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Menu</title>
+    <style>
+        .overlay {
+            width: 0;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-x: hidden;
+            transition: .5s;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+        }
+
+        .overlay-content a {
+            text-decoration: none;
+            padding: 8px;
+            font-size: 32px;
+            color: white;
+            display: block;
+            transition: .3s;
+        }
+
+        .overlay-content a:hover {
+            color: #555;
+        }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+        }
+
+        .nav a {
+            padding: 0 8px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 20px;
+        }
+
+        @media screen and (min-width:600px) {
+            .menubar {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+
+        <div class="header">
+            <h2>Fullscreen overlay</h2>
+            <div class="nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Service</a>
+                <a href="#">Contact</a>
+            </div>
+            <button class="menubar" onclick="openNav()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.5" d="M3 5h18M3 12h18M3 19h18" /></svg>
+            </button>
+        </div>
+
+        <div id="main">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel necessitatibus sit laborum iusto omnis quis,
+                recusandae, harum laboriosam quos voluptate suscipit vitae dolores, doloribus vero? Excepturi impedit
+                illum nemo laboriosam!</p>
+        </div>
+
+        <div id="myNav" class="overlay">
+            <button class="closebtn" onclick="closeNav()">close</button>
+            <div class="overlay-content">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById('myNav').style.width = '300px';
+        }
+
+        function closeNav() {
+            document.getElementById('myNav').style.width = '0';
+        }
+    </script>
+</body>
+
+</html>

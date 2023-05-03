@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Vartical</title>
+    <style>
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+
+        }
+
+        .tab-wrapper {
+            border: 1px solid #ddd;
+            display: flex;
+        }
+
+        .tab-wrapper.active {
+            background-color: green;
+            color: white;
+        }
+
+        .tabs {
+            width: 40%;
+        }
+
+        .tabcontent-wrap {
+            width: 60%;
+        }
+
+        .tablinks {
+            width: 100%;
+            padding: 12px;
+            cursor: pointer;
+            border: none;    
+        }
+        .tablinks.active {
+            color: #fff;
+        }
+        .tablinks:hover {
+            background-color: #ddd;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 12px 24px;
+        }
+        .tab-content.active {
+            display: block !important;
+        }
+
+        #London {
+            background-color: red;
+            color: #fff;
+        }
+
+        #Paris {
+            background-color: green;
+            color: #fff;
+        }
+
+        #Tokyo {
+            background-color: blue;
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Tab Vartical</h2>
+        <div class="tab-wrapper">
+            <div class="tabs">
+                <button class="tablinks" onclick="openTab(this,'London','red')">Tab 1</button>
+                <button class="tablinks" onclick="openTab(this,'Paris','green')">Tab 2</button>
+                <button class="tablinks" onclick="openTab(this,'Tokyo','blue')">Tab 3</button>
+            </div>
+
+            <div class="tabcontent-wrap">
+                <div id="London" class="tab-content">
+                    <h3>London</h3>
+                    <p>London is the Capital of England</p>
+                </div>
+
+                <div id="Paris" class="tab-content">
+                    <h3>Paris</h3>
+                    <p>Paris is the Capital of France</p>
+                </div>
+
+                <div id="Tokyo" class="tab-content">
+                    <h3>Tokyo</h3>
+                    <p>Tokyo is the Capital of Japan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // function openTab(e, cityName,color) {
+        //     let tabContent = document.getElementsByClassName('tab-content');
+        //     for (let cont of tabContent) {
+        //         cont.classList.remove('active')
+        //     }
+
+        //     let tabWrapper = document.getElementsByClassName('tab-wrapper');
+        //     for(let wrap of tabWrapper){
+        //         wrap.classList.add('active');
+
+        //     }
+
+        //     let shorName = document.getElementById(cityName);
+        //     shorName.classList.add('active')
+
+        //     let tablinks = document.getElementsByClassName('tablinks');
+        //     for (let tab of tablinks) {
+        //         tab.classList.remove('active')
+
+        //     }
+        //     e.classList.add('active');
+        // }
+        function openTab(e, cityName, color) {
+            let tabContent = document.getElementsByClassName('tab-content');
+            for (let cont of tabContent) {
+                cont.style.display = 'none'
+            }
+
+            let tablinks = document.getElementsByClassName('tablinks');
+            for (let link of tablinks) {
+                link.style.backgroundColor = ''
+            }
+
+            document.getElementById(cityName).style.display = 'block';
+            e.style.backgroundColor = color
+        }
+    </script>
+</body>
+
+</html>
